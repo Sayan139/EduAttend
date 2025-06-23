@@ -1,28 +1,26 @@
-#include <iostream>  // for input and output
-
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>            
 using namespace std;
-
 int main() {
-    // Declare variables
-    int number;
-
-    // Ask user for input
-    cout << "Enter a number: ";
-    cin >> number;
-
-    // Conditional statement
-    if (number % 2 == 0) {
-        cout << number << " is even." << endl;
-    } else {
-        cout << number << " is odd." << endl;
+    int n;
+    cin >> n;
+    vector<string> names(n);
+    for (int i = 0; i < n; ++i) {
+        cin >> names[i];
     }
-
-    // Loop from 1 to number
-    cout << "Counting from 1 to " << number << ":" << endl;
-    for (int i = 1; i <= number; i++) {
-        cout << i << " ";
+    
+    sort(names.begin(), names.end());
+    
+    for (const auto& name : names) {
+        cout << name << endl;
     }
-    cout << endl;
-
+    
     return 0;
 }
+// This code reads a number of names from standard input, sorts them in alphabetical order, and
+// then prints them out, each on a new line. The use of the C++14 standard allows for cleaner syntax and
+// better performance with the STL (Standard Template Library) features like `std::vector` and `std::sort`.
+// The code is efficient and straightforward, leveraging the STL for sorting and input/output operations.
+// The program is designed to handle a variable number of names, making it flexible for different inputs    
